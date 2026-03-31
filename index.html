@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>سفر | وجهات عالمية وفرص عمل – شيفات، مهندسون، مدرسون، صالونات</title>
+    <!-- Google Fonts + Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* header */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            font-weight: 400;
+            margin-right: 10px;
+        }
+        .contact-header {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+            padding: 8px 18px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+        .contact-header i {
+            font-size: 1.3rem;
+            color: #25D366;
+        }
+        .contact-header a {
+            color: white;
+            text-decoration: none;
+            direction: ltr;
+            font-family: monospace;
+            font-size: 1.1rem;
+        }
+        .contact-header a:hover {
+            color: #fbbf24;
+        }
+        /* hero */
+        .hero {
+            background: linear-gradient(120deg, #eef2ff, #ffffff);
+            padding: 60px 0 50px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h2 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+        .hero-text h2 i {
+            color: #f97316;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #334155;
+            margin-bottom: 25px;
+            max-width: 550px;
+        }
+        .badge-trust {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .badge-trust div {
+            background: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+        }
+        .hero-img {
+            flex: 0.8;
+            text-align: center;
+        }
+        .hero-img i {
+            font-size: 10rem;
+            color: #f97316;
+            opacity: 0.8;
+        }
+        /* section titles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+        .section-title h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 25%;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, #f97316, #facc15);
+            border-radius: 4px;
+        }
+        .section-title p {
+            color: #475569;
+            margin-top: 12px;
+            font-size: 1.1rem;
+        }
+        /* grids */
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0 40px;
+        }
+        .card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.05);
+            border: 1px solid #eef2ff;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 30px -12px rgba(0,0,0,0.15);
+            border-color: #fed7aa;
+        }
+        .card-header-icon {
+            background: #f1f5f9;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 2px solid #fef3c7;
+        }
+        .card-header-icon i {
+            font-size: 3.5rem;
+            color: #f97316;
+        }
+        .card-content {
+            padding: 24px 20px 20px;
+        }
+        .card-content h4 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .job-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 15px 0;
+        }
+        .job-specs span {
+            background: #fef3c7;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #b45309;
+        }
+        .price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #2c3e66;
+            margin: 15px 0;
+            background: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 40px;
+            display: inline-block;
+        }
+        .btn-offer {
+            background: linear-gradient(95deg, #f97316, #facc15);
+            border: none;
+            width: 100%;
+            padding: 12px 0;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1e293b;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 15px;
+        }
+        .btn-offer i {
+            font-size: 1.1rem;
+        }
+        .btn-offer:hover {
+            background: linear-gradient(95deg, #ea580c, #eab308);
+            color: white;
+            transform: scale(0.98);
+        }
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 30px 0 20px;
+        }
+        .card-flag img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid white;
+        }
+        /* services */
+        .services-section {
+            background: linear-gradient(110deg, #fef9e6 0%, #ffffff 100%);
+            padding: 60px 0;
+            margin: 40px 0 30px;
+            border-radius: 48px;
+        }
+        .services-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .service-card {
+            background: white;
+            flex: 1;
+            min-width: 260px;
+            border-radius: 32px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: 0.25s;
+            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.08);
+            border: 1px solid #ffe6cc;
+        }
+        .service-icon {
+            background: #fff1e5;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+        .service-icon i {
+            font-size: 2.6rem;
+            color: #f97316;
+        }
+        .contact-section {
+            background: #0f172a;
+            border-radius: 48px;
+            margin: 50px 0 40px;
+            padding: 50px 30px;
+            text-align: center;
+            color: white;
+        }
+        .whatsapp-btn {
+            background-color: #25D366;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 35px;
+            border-radius: 60px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            transition: 0.2s;
+            box-shadow: 0 8px 20px rgba(37,211,102,0.3);
+        }
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+        .floating-wa a {
+            color: white;
+            font-size: 2rem;
+        }
+        .footer {
+            background: #f1f5f9;
+            padding: 35px 0;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .hero-text h2 { font-size: 1.8rem; }
+            .section-title h3 { font-size: 1.6rem; }
+            .whatsapp-btn { font-size: 1rem; padding: 10px 25px; }
+        }
+        .text-center { text-align: center; }
+        .job-badge-sm {
+            display: inline-block;
+            background: #fef3c7;
+            border-radius: 40px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #b45309;
+        }
+    </style>
+</head>
+<body>
+
+<div class="floating-wa">
+    <a href="https://wa.me/96399637056?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85%D9%86%20%D8%B3%D9%81%D8%B1%20%D8%9F%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%81%D8%B1%D8%B5%20%D8%A7%D9%84%D8%B9%D9%85%D9%84" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+<header class="header">
+    <div class="container header-content">
+        <div class="logo">
+            <h1>سفر <span>Travel & Beyond</span></h1>
+        </div>
+        <div class="contact-header">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/96399637056" target="_blank">+963 996 370 56</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <h2>اكتشف العالم <i class="fas fa-globe-asia"></i> <br> و<span style="color:#f97316;">فرص العمل</span> المضمونة</h2>
+            <p>باقات سفر سياحية، تأمين شامل، وفيزا مضمونة. إضافة إلى آلاف فرص العمل في المطاعم، الصالونات، الهندسة، والتدريس – مع راتب + سكن.</p>
+            <div class="badge-trust">
+                <div><i class="fas fa-utensils"></i> شيفات وعمال مطاعم</div>
+                <div><i class="fas fa-cut"></i> صالونات رجالي ونسائي</div>
+                <div><i class="fas fa-hard-hat"></i> مهندسون جميع التخصصات</div>
+                <div><i class="fas fa-chalkboard-user"></i> مدرسون جميع الاختصاصات</div>
+            </div>
+        </div>
+        <div class="hero-img">
+            <i class="fas fa-briefcase"></i>
+        </div>
+    </div>
+</section>
+
+<!-- ========== قائمة الوجهات السياحية (كما هي) ========== -->
+<div class="container" style="margin-top: 60px;">
+    <div class="section-title">
+        <h3>باقات السفر المميزة</h3>
+        <p>اختر وجهتك واحصل على عروض حصرية مع خدمات متكاملة</p>
+    </div>
+    <div class="destinations-grid">
+        <div class="card">
+            <div class="card-flag" style="padding:20px; text-align:center;"><img src="https://flagcdn.com/w320/iq.png" alt="العراق"></div>
+            <div class="card-content"><h4>العراق <span class="country-en">Iraq</span></h4><p>فيز سياحية وتأمين فرص عمل في بغداد أو أربيل</p><div class="price">$1800---2400$<small>سياحية او سنوية</small></div><button class="btn-offer" onclick="sendWaInquiry('العراق')"><i class="fab fa-whatsapp"></i> احجز العرض</button></div>
+        </div>
+        <div class="card">
+            <div class="card-flag" style="padding:20px; text-align:center;"><img src="https://flagcdn.com/w320/my.png" alt="ماليزيا"></div>
+            <div class="card-content"><h4>ماليزيا <span class="country-en">Malaysia</span></h4><p>سياحية وفرص عمل: مطاعم، صالونات، بناء، برمجيات</p><div class="price">$2800---7100$ <small>سياحية/سنوية/إقامة جامعية</small></div><button class="btn-offer" onclick="sendWaInquiry('ماليزيا')"><i class="fab fa-whatsapp"></i> احجز العرض</button></div>
+        </div>
+        <div class="card">
+            <div class="card-flag" style="padding:20px; text-align:center;"><img src="https://flagcdn.com/w320/ca.png" alt="كندا"></div>
+            <div class="card-content"><h4>كندا <span class="country-en">Canada</span></h4><p>فيزا سنوية وفرص عمل براتب يومي مع إمكانية لجوء</p><div class="price">$20000 <small>سنوية</small></div><button class="btn-offer" onclick="sendWaInquiry('كندا')"><i class="fab fa-whatsapp"></i> احجز العرض</button></div>
+        </div>
+        <div class="card">
+            <div class="card-flag" style="padding:20px; text-align:center;"><img src="https://flagcdn.com/w320/au.png" alt="أستراليا"></div>
+            <div class="card-content"><h4>أستراليا <span class="country-en">Australia</span></h4><p>تأمين الدخول بشكل قانوني وشرعي</p><div class="price">$19500 <small>سياحية ثلاث أشهر</small></div><button class="btn-offer" onclick="sendWaInquiry('أستراليا')"><i class="fab fa-whatsapp"></i> احجز العرض</button></div>
+        </div>
+        <div class="card">
+            <div class="card-flag" style="padding:20px; text-align:center;"><img src="https://flagcdn.com/w320/eu.png" alt="أوروبا"></div>
+            <div class="card-content"><h4>أوروبا <span class="country-en">Europe</span></h4><p>جميع دول الاتحاد الأوروبي</p><div class="price">$20000 <small>منحة</small></div><button class="btn-offer" onclick="sendWaInquiry('أوروبا')"><i class="fab fa-whatsapp"></i> احجز العرض</button></div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== 1. فرص عمل في المطاعم والفنادق ========== -->
+<div class="container">
+    <div class="section-title">
+        <h3>🍽️ فرص عمل في المطاعم والفنادق</h3>
+        <p>رواتب مجزية + سكن + تأمين صحي – عقود نظامية</p>
+    </div>
+    <div class="jobs-grid">
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-chef-hat"></i></div>
+            <div class="card-content">
+                <h4>شيف مطعم</h4>
+                <div class="job-specs"><span>خبرة 3+ سنوات</span><span>إدارة مطبخ</span></div>
+                <p>إعداد قوائم طعام، الإشراف على الطهاة، جودة عالية. مطلوب لسلسلة مطاعم راقية.</p>
+                <div class="price">💰 راتب يبدأ من 900$ + سكن + تأمين</div>
+                <button class="btn-offer" onclick="sendJobInquiry('شيف مطعم - راتب + سكن')"><i class="fab fa-whatsapp"></i> تقدم الآن</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-utensil-spoon"></i></div>
+            <div class="card-content">
+                <h4>شيف مأكولات عربية</h4>
+                <div class="job-specs"><span>مندي - مشاوي</span><span>مقبلات</span></div>
+                <p>تخصص في المطبخ الخليجي والشامي، خبرة في الأفران والمشاوي. فرص في مطاعم عريقة.</p>
+                <div class="price">💰 راتب 700$ + سكن + تأمين</div>
+                <button class="btn-offer" onclick="sendJobInquiry('شيف مأكولات عربية - راتب + سكن')"><i class="fab fa-whatsapp"></i> قدم سيرتك</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-cake-candles"></i></div>
+            <div class="card-content">
+                <h4>شيف حلويات</h4>
+                <div class="job-specs"><span>حلويات شرقية</span><span>غربية</span><span>تزيين</span></div>
+                <p>إعداد الحلويات والمعجنات، ابتكار وصفات جديدة. عمل في فنادق 5 نجوم ومطاعم.</p>
+                <div class="price">💰 راتب $800 + سكن + بدلات</div>
+                <button class="btn-offer" onclick="sendJobInquiry('شيف حلويات - راتب + سكن')"><i class="fab fa-whatsapp"></i> سجل اهتمامك</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-people-arrows"></i></div>
+            <div class="card-content">
+                <h4>عمال مطاعم</h4>
+                <div class="job-specs"><span>خدمة أرضية</span><span>مساعد طاهي</span><span>غسيل صحون</span></div>
+                <p>مطلوب عمال مطابخ، عمال خدمة، مساعدين شيف. لا يشترط خبرة – تدريب متوفر.</p>
+                <div class="price">💰 راتب 450$ + سكن + وجبات + تأمين</div>
+                <button class="btn-offer" onclick="sendJobInquiry('عمال مطاعم - راتب + سكن')"><i class="fab fa-whatsapp"></i> أرسل طلبك</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== 2. صالونات حلاقة رجالي ونسائي ========== -->
+<div class="container">
+    <div class="section-title">
+        <h3>✂️ فرص عمل في صالونات الحلاقة</h3>
+        <p>مطلوب كوادر محترفة -نسبة على الحلاقة</p>
+    </div>
+    <div class="jobs-grid">
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-cut"></i></div>
+            <div class="card-content">
+                <h4>حلاق رجالي</h4>
+                <div class="job-specs"><span>خبرة 2 سنة</span><span>قصات عصرية</span><span>لحية</span></div>
+                <p>مطلوب لصالون فاخر. إتقان جميع القصات والتعامل مع الزبائن. بيئة عمل ممتازة.</p>
+                <div class="price">💰 راتب 600$ + عمولة شهرية</div>
+                <button class="btn-offer" onclick="sendJobInquiry('حلاق رجالي ')"><i class="fab fa-whatsapp"></i> قدم الآن</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-female"></i></div>
+            <div class="card-content">
+                <h4>كوافيرة نسائية</h4>
+                <div class="job-specs"><span>تسريحات</span><span>صبغات</span><span>عناية</span></div>
+                <p>مطلوب كوافيرة محترفة لصالون نسائي راقٍ. خبرة في قصات الشعر وعمل المكياج البسيط.</p>
+                <div class="price">💰 راتب 700$ + سكن خاص + تأمين</div>
+                <button class="btn-offer" onclick="sendJobInquiry('كوافيرة نسائية - راتب ')"><i class="fab fa-whatsapp"></i> تواصل معنا</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== 3. مهندسون جميع الاختصاصات ========== -->
+<div class="container">
+    <div class="section-title">
+        <h3>👷 مهندسون – جميع التخصصات مطلوبة</h3>
+        <p>فرص في شركات مقاولات واستشارات – رواتب مغرية + سكن + بدلات</p>
+    </div>
+    <div class="jobs-grid">
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-drafting-compass"></i></div>
+            <div class="card-content">
+                <h4>مهندس مدني / معماري</h4>
+                <div class="job-specs"><span>مدني</span><span>معماري</span><span>إشراف</span></div>
+            <p>خبرة 3-10 سنوات، إجادة برامج التصميم.</p>
+                <div class="price">💰 راتب 1200$-2000$ </div>
+                <button class="btn-offer" onclick="sendJobInquiry('مهندس مدني/معماري')"><i class="fab fa-whatsapp"></i> أرسل السيرة</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-bolt"></i></div>
+            <div class="card-content">
+                <h4>مهندس كهرباء / ميكانيك</h4>
+                <div class="job-specs"><span>كهرباء قوى</span><span>ميكانيك عام</span><span>HVAC</span></div>
+                <p>فرص في قطاع الطاقة والصناعة. عقود طويلة الأجل مع تدريب مستمر.</p>
+                <div class="price">💰راتب 1300$-2200$ سكن </div>
+                <button class="btn-offer" onclick="sendJobInquiry('مهندس كهرباء/ميكانيك')"><i class="fab fa-whatsapp"></i> قدم الآن</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="card-content">
+                <h4>مهندس برمجيات / IT</h4>
+                <div class="job-specs"><span>تطوير</span><span>شبكات</span><span>أمن سيبراني</span></div>
+                <p>مطلوب مطورين، محللين، مختصين في الذكاء الاصطناعي. عمل عن بعد أو حضور.</p>
+                <div class="price">💰 رواتب 1400$-2200$</div>
+                <button class="btn-offer" onclick="sendJobInquiry('مهندس برمجيات/IT')"><i class="fab fa-whatsapp"></i> تقدم الآن</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="card-content">
+                <h4>تخصصات هندسية أخرى</h4>
+                <div class="job-specs"><span>كيميائي</span><span>بيئي</span><span>صناعي</span></div>
+                <p>نرحب بجميع التخصصات الهندسية. أرسل سيرتك وسنرشدك للفرص المناسبة.</p>
+                <div class="price">💰 رواتب تنافسية + سكن + مزايا</div>
+                <button class="btn-offer" onclick="sendJobInquiry('هندسة (تخصصات أخرى)')"><i class="fab fa-whatsapp"></i> أرسل سيرتك الذاتية</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== 4. مدرسون جميع الاختصاصات ========== -->
+<div class="container">
+    <div class="section-title">
+        <h3>📚 فرص للمدرسين – جميع الاختصاصات</h3>
+        <p>مدارس دولية وجامعات – رواتب مميزة + سكن + إجازات مدفوعة</p>
+    </div>
+    <div class="jobs-grid">
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-language"></i></div>
+            <div class="card-content">
+                <h4>مدرس لغة عربية / إنجليزية</h4>
+                <div class="job-specs"><span>لغة عربية</span><span>لغة إنجليزية</span><span>TOEFL/IELTS</span></div>
+                <p>مطلوب لمدارس وجامعات في دول الخليج وأوروبا. شهادات خبرة وتأهيل تربوي.</p>
+                <div class="price">💰 راتب 500$-1000$ + دروس خصوصية</div>
+                <button class="btn-offer" onclick="sendJobInquiry('مدرس لغة عربية/إنجليزية')"><i class="fab fa-whatsapp"></i> قدم الآن</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-square-root-variable"></i></div>
+            <div class="card-content">
+                <h4>مدرس رياضيات / علوم</h4>
+                <div class="job-specs"><span>رياضيات</span><span>فيزياء</span><span>كيمياء</span></div>
+                <p>مدرسين للمراحل الابتدائية والثانوية. قدرة على تدريس المناهج الدولية (IG, IB).</p>
+                <div class="price">💰 راتب 500$</div>
+                <button class="btn-offer" onclick="sendJobInquiry('مدرس رياضيات/علوم')"><i class="fab fa-whatsapp"></i> سجل بياناتك</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-laptop"></i></div>
+            <div class="card-content">
+                <h4>مدرس حاسوب / تكنولوجيا</h4>
+                <div class="job-specs"><span>برمجة</span><span>IT</span><span>روبوتكس</span></div>
+                <p>مدارس حديثة تطلب معلمين للمهارات الرقمية والذكاء الاصطناعي. دورات تدريبية متاحة.</p>
+                <div class="price">💰 راتب $800</div>
+                <button class="btn-offer" onclick="sendJobInquiry('مدرس حاسوب/تكنولوجيا')"><i class="fab fa-whatsapp"></i> تواصل معنا</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header-icon"><i class="fas fa-chalkboard"></i></div>
+            <div class="card-content">
+                <h4>مدرس تربية فنية / موسيقى</h4>
+                <div class="job-specs"><span>فنية</span><span>موسيقى</span><span>أنشطة</span></div>
+                <p>فرص في مدارس دولية ومؤسسات تعليمية. بيئة إبداعية ومكافآت ممتازة.</p>
+                <div class="price">💰 راتب $300</div>
+                <button class="btn-offer" onclick="sendJobInquiry('مدرس تربية فنية/موسيقى')"><i class="fab fa-whatsapp"></i> قدم السيرة</button>
+            </div>
+        </div>
+    </div>
+    <div class="text-center" style="margin-bottom: 40px;">
+        <p class="job-badge-sm" style="background:#f97316; color:white; padding:8px 20px;">⚠️ جميع الوظائف تشمل راتباً شهرياً وسكناً وتأميناً صحياً حسب العقد – للاستفسار السريع تواصل عبر واتساب</p>
+    </div>
+</div>
+
+<!-- خدمات التأمين والفيزا -->
+<div class="container">
+    <div class="services-section">
+        <div class="section-title" style="margin-bottom: 20px;">
+            <h3>خدمات متكاملة للمسافر والموظف</h3>
+            <p>تأمين سفر وعمل، فيزا سياحية وإقامة، دعم كامل</p>
+        </div>
+        <div class="services-wrapper">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-shield-virus"></i></div>
+                <h4>تأمين فرض العمل والسفر</h4>
+                <p>وثائق تأمين صحي ومهني معترف بها دولياً. تغطية شاملة للحوادث والإخلاء الطبي.</p>
+                <div class="job-badge-sm">تأمين فوري + شهادة معتمدة</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-passport"></i></div>
+                <h4>فيزا سياحية وعمل</h4>
+                <p>تأشيرات سياحية، عمل، إقامة لجميع المهن. متابعة شخصية وإنجاز سريع.</p>
+                <div class="job-badge-sm">نسبة قبول عالية</div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h4>حزمة "توفير وظيفي شامل"</h4>
+                <p>تأمين + فيزا + توفير فرصة عمل مناسبة حسب مؤهلاتك. استشارة مجانية مع خبراء التوظيف.</p>
+                <div class="job-badge-sm">خصم 15% على الباقات</div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 30px;">
+            <a href="https://wa.me/96399637056?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%AA%D8%A3%D9%85%D9%8A%D9%86%20%D9%88%D8%A7%D9%84%D9%81%D9%8A%D8%B2%D8%A7%20%D9%84%D9%84%D9%88%D8%B8%D8%A7%D8%A6%D9%81" class="btn-offer" style="width: auto; padding: 12px 32px; display: inline-flex; background: #0f172a; color: white; text-decoration: none;"><i class="fab fa-whatsapp"></i> استفسر عن التأمين والفيزا للوظائف</a>
+        </div>
+    </div>
+</div>
+
+<!-- قسم التواصل المباشر -->
+<div class="container">
+    <div class="contact-section">
+        <h3><i class="fab fa-whatsapp"></i> تواصل معنا مباشرة لفرص العمل</h3>
+        <p>للتقديم على أي من الوظائف (شيفات، عمال مطاعم، صالونات، مهندسون، مدرسون) أو للاستفسار عن العروض السياحية – فريقنا يرد خلال دقائق.</p>
+        <a href="https://wa.me/96399637056?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D8%B3%D9%81%D8%B1%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D9%85%20%D9%84%D9%88%D8%B8%D9%8A%D9%81%D8%A9%20(%D8%B4%D9%8A%D9%81%20%D8%A3%D9%88%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%A3%D9%88%20%D9%85%D8%AF%D8%B1%D8%B3%20%D8%A3%D9%88%20%D8%B5%D8%A7%D9%84%D9%88%D9%86%D8%A7%D8%AA)" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> واتساب: +963 996 370 56
+        </a>
+        <div class="phone-note" style="margin-top:20px; direction:ltr;">أرسل سيرتك الذاتية أو استفسارك – متاح 24 ساعة</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p style="font-weight: 500;">© 2025 سفر – وكالة سياحة وتوظيف متكاملة | جميع الحقوق محفوظة</p>
+        <p style="font-size: 0.85rem; margin-top: 8px;"><i class="fas fa-check-circle" style="color:#f97316;"></i> نوفر عقود عمل رسمية مع رواتب وسكن وتأمين – وجهات متعددة (الخليج، أوروبا، كندا، أستراليا، ماليزيا)</p>
+        <div style="margin-top: 12px;">
+            <a href="https://wa.me/96399637056" style="color:#1e293b; text-decoration: none; margin: 0 10px;"><i class="fab fa-whatsapp"></i> +96399637056</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function sendWaInquiry(countryName) {
+        let baseMessage = `مرحباً في سفر، أرغب بالاستفسار عن عرض السفر إلى ${countryName} وأيضاً معلومات عن التأمين والفيزا.`;
+        window.open(`https://wa.me/96399637056?text=${encodeURIComponent(baseMessage)}`, '_blank');
+    }
+    function sendJobInquiry(jobTitle) {
+        let message = `مرحباً في سفر، أرغب بالتقديم على وظيفة: ${jobTitle} (راتب + سكن). أرجو إرسال التفاصيل.`;
+        window.open(`https://wa.me/96399637056?text=${encodeURIComponent(message)}`, '_blank');
+    }
+</script>
+</body>
+</html>
